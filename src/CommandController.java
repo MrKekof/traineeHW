@@ -168,6 +168,8 @@ public class CommandController {
         }
     }
 
+    //Methods
+
     public void printFullName(String name , String lastname){
         System.out.println("Ur name is: "+name + " "+lastname);
     }
@@ -214,6 +216,5 @@ public class CommandController {
     int sumOfCubes(int n){
         cube(n);
         return n+n;
-
     }
 }

@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 public class CommandController {
@@ -168,7 +166,54 @@ public class CommandController {
 
             }
         }
+    }
 
+    public void printFullName(String name , String lastname){
+        System.out.println("Ur name is: "+name + " "+lastname);
+    }
+
+
+    int square(int n ){
+        return n*n;
+
+    }
+    int multiply(int a , int b){
+        return a*b;
+
+    }
+
+    boolean isEven(int n){
+        if (n%2==0){
+            return true;
+        }
+        return false;
+    }
+
+    void getGreetings(String name){
+        System.out.println("Hello " + name);
+    }
+
+    boolean isPositive(int n){
+        if (n >0){
+            return true;
+
+        }else {
+        return false;}
+    }
+
+
+    double calculateArea(double length , double width){
+        return length*width;
+
+    }
+
+    int cube(int n ){
+        return n*n*n;
+
+    }
+    int sumOfCubes(int n){
+        cube(n);
+        return n+n;
 
     }
 }

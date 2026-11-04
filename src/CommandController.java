@@ -217,4 +217,12 @@ public class CommandController {
         cube(n);
         return n+n;
     }
+
+
+    void printRightTriangle(){
+        System.out.print("choose size of Adjacent: ");
+        int numOfAdjacent = sc.nextInt();
+
+
+    }
 }

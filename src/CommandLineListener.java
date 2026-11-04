@@ -1,8 +1,12 @@
+import labs.studyTimeTracker.StudyTimeTracker;
+
 import java.util.Scanner;
 
 public class CommandLineListener {
     Scanner scanner = new Scanner(System.in);
     CommandController commandController = new CommandController();
+    StudyTimeTracker studyTimeTracker = new StudyTimeTracker();
+
 
     public void listen() {
 
@@ -39,6 +43,10 @@ public class CommandLineListener {
 
                     case CANYOUVOTE:
                         commandController.canYouVote();
+                        break;
+
+                    case STUDYTIMETRACKER:
+                        studyTimeTracker.listenSTT();
                         break;
                 }
 

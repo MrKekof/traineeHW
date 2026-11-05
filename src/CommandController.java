@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 public class CommandController {
-    Scanner sc = new Scanner(System.in);
+    private final Scanner sc;
+
+    public CommandController(Scanner scanner) {
+        this.sc = scanner;
+    }
 
     public void hiStudent() {
         String urc = "U r cooked";

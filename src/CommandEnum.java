@@ -1,6 +1,9 @@
 public enum CommandEnum {
 
     STUDYTIMETRACKER("Study Time tracker", "Track ur study time"),
+    STUDYPLANNER("Study Planner", "Track weekly study sessions and goals"),
+    GRADETRACKER("Grade Tracker", "Track assignment and exam results"),
+    SCREENTIMETRACKER("Screen Time Tracker", "Track daily screen time"),
     HISTUDENT("HiStudent", "This command greets student "),
     EXIT("Exit", "Stops program"),
     SOLVE("SolveEq", "Solving equations"),

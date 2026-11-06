@@ -45,11 +45,3 @@ public enum CommandEnum {
 
 
 
-//STUDYPLANNER("Study Planner",
-//            "Console application that" +
-//                    " helps a student record study sessions and monitor progress" +
-//                    " toward a weekly study goal."),
-//    SCREENTIMETRACKER("Screen-time Tracker",
-//            "a console application that records daily screen time by category and compares" +
-//                    " productive screen time with entertainment screen time. " +
-//                    "The menu must repeat until the student exits."),

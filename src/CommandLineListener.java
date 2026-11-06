@@ -1,3 +1,7 @@
+import labs.GradeTracker;
+import labs.ScreenTimeTracker;
+import labs.StudyTracker;
+
 import java.util.Scanner;
 
 public class CommandLineListener {
@@ -47,7 +51,6 @@ public class CommandLineListener {
                         commandController.canYouVote();
                         break;
 
-                    case STUDYTIMETRACKER:
                     case STUDYPLANNER:
                         studyTracker.run();
                         break;

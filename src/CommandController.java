@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CommandController {
@@ -322,6 +323,73 @@ public class CommandController {
             }
             System.out.println("Please enter a whole number between " + min + " and " + max + ".");
         }
+    }
+
+
+
+    //задачки на массивы которые решал ранее , можете их тоже чекнуть пж и доп баллы дать, умоляю
+    public int[] reverseArray(int[] massive){
+        if (massive==null || massive.length==0){
+            throw new IllegalArgumentException("Массив не может быть пустым");
+        }
+        int j =0;
+        int [] reversedArray= new int[massive.length];
+        for (int last = massive.length-1 ; last>=0; last--){
+
+            reversedArray[j] = massive[last];
+            j++;
+        }
+        return reversedArray;
+    }
+
+
+    public void howManyEvensOdds(int[] nums) {
+        if (nums == null) {
+            throw new IllegalArgumentException("Массив не может быть пустым");
+        }
+        int even = 0;
+        int odd = 0;
+        for (int num : nums) {
+            if (num % 2 == 0) {
+                even++;
+            } else {
+                odd++;
+            }
+        }
+        System.out.println("Количество нечетных чисел: " + odd);
+        System.out.println("Количество четных чисел: " + even);
+    }
+
+    public int removeDuplicatesInSortedArr(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int slowPointer = 0;
+        int fastPointer;
+        for ( fastPointer = 1; fastPointer < nums.length; fastPointer++) {
+            if (nums[slowPointer] != nums[fastPointer]) {
+                slowPointer ++;
+                nums[slowPointer] = nums[fastPointer];
+            }
+
+        }
+        return slowPointer+1;
+    }
+    public void moveZeroes (int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+        int slow=0;
+        int tmp;
+        for (int fast=0; fast<nums.length; fast++) {
+            if (nums[fast] != 0) {
+                tmp = nums[slow];
+                nums[slow] = nums[fast];
+                nums[fast] = tmp;
+                slow++;
+            }
+        }
+        System.out.println(Arrays.toString(nums));
     }
 
 }

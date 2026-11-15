@@ -221,20 +221,37 @@ public class CommandController {
     }
 
 
-    void printRightTriangle() {
-        System.out.print("choose size of Adjacent: ");
-        int numOfAdjacent = sc.nextInt();
-
-
-    }
-
-
     void rightTriangle(int n, boolean numbers) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= i; j++) {
                 System.out.print(symbol(j, numbers) + " ");
             }
             System.out.println();
+        }
+    }
+
+
+    void printTriangles() {
+        int size = readInt(sc, "Enter the size of the pattern (number of rows): ", 1, 100);
+        System.out.println("\nChoose the pattern type:\n"
+                + "1) Right Triangle\n"
+                + "2) Inverted Right Triangle\n"
+                + "3) Pyramid\n"
+                + "4) Inverted Pyramid\n"
+                + "5) Diamond");
+        int typeOfTriangle = readInt(sc, "Your choice: ", 1, 5);
+
+        System.out.println("\nChoose what to print:\n"
+                + "1) Stars (*)\n"
+                + "2) Numbers");
+        boolean numbers = readInt(sc, "Your choice: ", 1, 2) == 2;
+        System.out.println();
+        switch (typeOfTriangle) {
+            case 1 -> rightTriangle(size, numbers);
+            case 2 -> invertedRightTriangle(size, numbers);
+            case 3 -> pyramid(size, numbers);
+            case 4 -> invertedPyramid(size, numbers);
+            case 5 -> diamond(size, numbers);
         }
     }
 
@@ -292,10 +309,10 @@ public class CommandController {
         return String.format("%-" + width + "s", s);
     }
 
-    int readInt(Scanner scanner, String prompt, int min, int max) {
+    int readInt(Scanner sc, String input, int min, int max) {
         while (true) {
-            System.out.print(prompt);
-            String line = scanner.nextLine().trim();
+            System.out.print(input);
+            String line = sc.nextLine().trim();
             try {
                 int value = Integer.parseInt(line);
                 if (value >= min && value <= max) {

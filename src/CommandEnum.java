@@ -10,6 +10,7 @@ public enum CommandEnum {
     MAXOF3("MaxOf3", "finds max num of three"),
     CALCULATOR("calc", "Simple calculator"),
     CANYOUVOTE("Can you vote?", "this awesome program tells if u can vote"),
+    PRINTTRIANGLE("PrintTriangle","prints triangles which u want"),
     HELP("Help", "Helps");
 
 

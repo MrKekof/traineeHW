@@ -63,15 +63,14 @@ public class CommandController {
         System.out.print("\nChoose an operation between: + - * /");
         String operation = sc.next();
         if (!operation.equals("+") && !operation.equals("-")
-                && !operation.equals("*") && !operation.equals("/"))
-        {
+                && !operation.equals("*") && !operation.equals("/")) {
             System.out.println("Choose operation between: + - * / ");
             return;
         }
 
         switch (operation) {
             case "+":
-                double resultPLus = num1 +num2;
+                double resultPLus = num1 + num2;
                 System.out.println(num1 + " + " + num2 + " = " + resultPLus);
                 break;
 
@@ -81,17 +80,17 @@ public class CommandController {
                 break;
 
             case "/":
-                if (num2 == 0){
+                if (num2 == 0) {
                     System.out.println("Second num can't be 0");
                     return;
                 }
-            double resultDivide= num1/num2;
+                double resultDivide = num1 / num2;
                 System.out.println(num1 + " / " + num2 + " = " + resultDivide);
                 break;
 
 
             case "*":
-                double resultMulti = num1*num2;
+                double resultMulti = num1 * num2;
                 System.out.println(num1 + " * " + num2 + " = " + resultMulti);
                 break;
 
@@ -116,40 +115,37 @@ public class CommandController {
     }
 
 
-
-    void canYouVote (){
+    void canYouVote() {
         System.out.print("\nEnter ur age: ");
         String strAge = sc.nextLine();
         int age = 0;
         try {
-             age = Integer.parseInt(strAge);
-        }catch (NumberFormatException e){
+            age = Integer.parseInt(strAge);
+        } catch (NumberFormatException e) {
             System.out.println("write num only ");
         }
-        if (age<18){
+        if (age < 18) {
             System.out.println("you can't vote");
         }
-        if ( age >100 ){
+        if (age > 100) {
             System.out.println(" Are you still alive?");
-        }
-        else {
+        } else {
             System.out.println("congrats , u can vote and earn 1000 soms");
         }
     }
 
 
-
-    void simpleStore(){
+    void simpleStore() {
         boolean running = true;
         int mousePrice = 20;
         int keyBoardPrice = 40;
-        int headphonesPrice = 50 ;
+        int headphonesPrice = 50;
         int laptopStandPrice = 30;
         System.out.println("Welcome to simpleStore");
 
         int userInput = sc.nextInt();
         sc.next();
-        while(true){
+        while (true) {
             System.out.println("==== SIMPLE STORE ====");
             System.out.println("1. Mouse - $20");
             System.out.println("2. Keyboard - $40");
@@ -157,7 +153,7 @@ public class CommandController {
             System.out.println("4. Laptop Stand - $30");
             System.out.println("5. Checkout");
             System.out.print("\nChoose a product: ");
-            switch(userInput){
+            switch (userInput) {
 
                 case 1:
 
@@ -167,66 +163,148 @@ public class CommandController {
                     break;
 
 
-
             }
         }
     }
 
     //Methods
 
-    public void printFullName(String name , String lastname){
-        System.out.println("Ur name is: "+name + " "+lastname);
+    public void printFullName(String name, String lastname) {
+        System.out.println("Ur name is: " + name + " " + lastname);
     }
 
 
-    int square(int n ){
-        return n*n;
-
-    }
-    int multiply(int a , int b){
-        return a*b;
+    int square(int n) {
+        return n * n;
 
     }
 
-    boolean isEven(int n){
-        if (n%2==0){
+    int multiply(int a, int b) {
+        return a * b;
+
+    }
+
+    boolean isEven(int n) {
+        if (n % 2 == 0) {
             return true;
         }
         return false;
     }
 
-    void getGreetings(String name){
+    void getGreetings(String name) {
         System.out.println("Hello " + name);
     }
 
-    boolean isPositive(int n){
-        if (n >0){
+    boolean isPositive(int n) {
+        if (n > 0) {
             return true;
 
-        }else {
-        return false;}
+        } else {
+            return false;
+        }
     }
 
 
-    double calculateArea(double length , double width){
-        return length*width;
+    double calculateArea(double length, double width) {
+        return length * width;
 
     }
 
-    int cube(int n ){
-        return n*n*n;
+    int cube(int n) {
+        return n * n * n;
 
     }
-    int sumOfCubes(int n){
+
+    int sumOfCubes(int n) {
         cube(n);
-        return n+n;
+        return n + n;
     }
 
 
-    void printRightTriangle(){
+    void printRightTriangle() {
         System.out.print("choose size of Adjacent: ");
         int numOfAdjacent = sc.nextInt();
 
 
     }
+
+
+    void rightTriangle(int n, boolean numbers) {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(symbol(j, numbers) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+    void invertedRightTriangle(int n, boolean numbers) {
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(symbol(j, numbers) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void pyramid(int n, boolean numbers) {
+        for (int i = 1; i <= n; i++) {
+            printPyramidRow(i, n, numbers);
+        }
+    }
+
+    void invertedPyramid(int n, boolean numbers) {
+        for (int i = n; i >= 1; i--) {
+            printPyramidRow(i, n, numbers);
+        }
+    }
+
+    void diamond(int n, boolean numbers) {
+        for (int i = 1; i <= n; i++) {
+            printPyramidRow(i, n, numbers);
+        }
+        for (int i = n - 1; i >= 1; i--) {
+            printPyramidRow(i, n, numbers);
+        }
+    }
+
+    void printPyramidRow(int i, int n, boolean numbers) {
+        int width = numbers ? String.valueOf(n).length() + 1 : 2;
+
+        for (int s = 1; s <= n - i; s++) {
+            System.out.print(" ".repeat(width));
+        }
+        for (int j = 1; j <= i; j++) {
+            System.out.print(pad(symbol(j, numbers), width));
+        }
+        for (int j = i - 1; j >= 1; j--) {
+            System.out.print(pad(symbol(j, numbers), width));
+        }
+        System.out.println();
+    }
+
+    String symbol(int value, boolean numbers) {
+        return numbers ? String.valueOf(value) : "*";
+    }
+
+    String pad(String s, int width) {
+        return String.format("%-" + width + "s", s);
+    }
+
+    int readInt(Scanner scanner, String prompt, int min, int max) {
+        while (true) {
+            System.out.print(prompt);
+            String line = scanner.nextLine().trim();
+            try {
+                int value = Integer.parseInt(line);
+                if (value >= min && value <= max) {
+                    return value;
+                }
+            } catch (NumberFormatException ignored) {
+            }
+            System.out.println("Please enter a whole number between " + min + " and " + max + ".");
+        }
+    }
+
 }

@@ -1,17 +1,24 @@
-import labs.studyTimeTracker.StudyTimeTracker;
+import labs.GradeTracker;
+import labs.ScreenTimeTracker;
+import labs.StudyTracker;
 
 import java.util.Scanner;
 
 public class CommandLineListener {
-    Scanner scanner = new Scanner(System.in);
-    CommandController commandController = new CommandController();
-    StudyTimeTracker studyTimeTracker = new StudyTimeTracker();
+    private final Scanner scanner = new Scanner(System.in);
+    private final CommandController commandController = new CommandController(scanner);
+    private final StudyTracker studyTracker = new StudyTracker(scanner);
+    private final GradeTracker gradeTracker = new GradeTracker(scanner);
+    private final ScreenTimeTracker screenTimeTracker = new ScreenTimeTracker(scanner);
 
 
     public void listen() {
 
         while (true) {
             System.out.print("\nInput command: ");
+            if (!scanner.hasNextLine()) {
+                return;
+            }
             String cmd = scanner.nextLine();
             try {
                 CommandEnum commandEnum = CommandEnum.valueOf(cmd.toUpperCase());
@@ -21,9 +28,8 @@ public class CommandLineListener {
                         break;
 
                     case EXIT:
-                        System.exit(1);
                         scanner.close();
-                        break;
+                        return;
 
                     case SOLVE:
                         commandController.squareEquationSolver();
@@ -45,8 +51,16 @@ public class CommandLineListener {
                         commandController.canYouVote();
                         break;
 
-                    case STUDYTIMETRACKER:
-                        studyTimeTracker.listenSTT();
+                    case STUDYPLANNER:
+                        studyTracker.run();
+                        break;
+
+                    case GRADETRACKER:
+                        gradeTracker.run();
+                        break;
+
+                    case SCREENTIMETRACKER:
+                        screenTimeTracker.run();
                         break;
                 }
 

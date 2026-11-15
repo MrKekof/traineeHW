@@ -1,6 +1,9 @@
 public enum CommandEnum {
 
     STUDYTIMETRACKER("Study Time tracker", "Track ur study time"),
+    STUDYPLANNER("Study Planner", "Track weekly study sessions and goals"),
+    GRADETRACKER("Grade Tracker", "Track assignment and exam results"),
+    SCREENTIMETRACKER("Screen Time Tracker", "Track daily screen time"),
     HISTUDENT("HiStudent", "This command greets student "),
     EXIT("Exit", "Stops program"),
     SOLVE("SolveEq", "Solving equations"),
@@ -42,11 +45,3 @@ public enum CommandEnum {
 
 
 
-//STUDYPLANNER("Study Planner",
-//            "Console application that" +
-//                    " helps a student record study sessions and monitor progress" +
-//                    " toward a weekly study goal."),
-//    SCREENTIMETRACKER("Screen-time Tracker",
-//            "a console application that records daily screen time by category and compares" +
-//                    " productive screen time with entertainment screen time. " +
-//                    "The menu must repeat until the student exits."),

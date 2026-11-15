@@ -62,6 +62,11 @@ public class CommandLineListener {
                     case SCREENTIMETRACKER:
                         screenTimeTracker.run();
                         break;
+
+                    case PRINTTRIANGLE:
+                        commandController.printTriangles();
+                        break;
+
                 }
 
 

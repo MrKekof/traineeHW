@@ -168,8 +168,6 @@ public class CommandController {
         }
     }
 
-    //Methods
-
     public void printFullName(String name, String lastname) {
         System.out.println("Ur name is: " + name + " " + lastname);
     }
@@ -325,24 +323,6 @@ public class CommandController {
         }
     }
 
-
-
-    //задачки на массивы которые решал ранее , можете их тоже чекнуть пж и доп баллы дать, умоляю
-    public int[] reverseArray(int[] massive){
-        if (massive==null || massive.length==0){
-            throw new IllegalArgumentException("Массив не может быть пустым");
-        }
-        int j =0;
-        int [] reversedArray= new int[massive.length];
-        for (int last = massive.length-1 ; last>=0; last--){
-
-            reversedArray[j] = massive[last];
-            j++;
-        }
-        return reversedArray;
-    }
-
-
     public void howManyEvensOdds(int[] nums) {
         if (nums == null) {
             throw new IllegalArgumentException("Массив не может быть пустым");
@@ -389,7 +369,10 @@ public class CommandController {
                 slow++;
             }
         }
-        System.out.println(Arrays.toString(nums));
     }
+
+
+
+
 
 }

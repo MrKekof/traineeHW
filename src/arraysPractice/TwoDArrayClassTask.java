@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class TwoDArrayClassTask {
     Scanner scanner = new Scanner(System.in);
-
+//task1
     void printArr() {
         int[][] matrix = {
                 {1, 2, 3},
@@ -18,7 +18,7 @@ public class TwoDArrayClassTask {
             System.out.println();
         }
     }
-
+//for me
     void matrixPrint(int[][] matrix) {
         System.out.println("Original matrix: ");
         for (int i = 0; i < matrix.length; i++) {
@@ -29,7 +29,7 @@ public class TwoDArrayClassTask {
         }
     }
 
-
+//task2
     void printingAndMod() {
         int[][] m = {
                 {5, 10, 15},
@@ -37,7 +37,7 @@ public class TwoDArrayClassTask {
         m[0][1] = 99;
         System.out.println(m[1][2]);
     }
-
+    //task3
     void sumOfM() {
         int[][] matrix = {
                 {1, 2, 3},
@@ -52,7 +52,7 @@ public class TwoDArrayClassTask {
         }
         System.out.println("Sum of all: " + sum);
     }
-
+    //task4
     void evenOddsInM() {
         int[][] matrix = {
                 {1, 2, 3},
@@ -72,7 +72,7 @@ public class TwoDArrayClassTask {
         }
 
     }
-
+    //task5
     void minAndMaxOfMatrix() {
         int[][] matrix = {
                 {1, 2, 3, 4},
@@ -97,7 +97,7 @@ public class TwoDArrayClassTask {
         System.out.println("Maximum is: " + max);
     }
 
-
+    //task6
     void fillTwoDViaScanner() {
         int[][] gonnaFilledByUser = new int[2][3];
         for (int i = 0; i < gonnaFilledByUser.length; i++) {
@@ -109,7 +109,7 @@ public class TwoDArrayClassTask {
         matrixPrint(gonnaFilledByUser);
     }
 
-
+    //task7
     void calculateSeparateRow() {
         int[][] nums = {
                 {1, 2, 3, 4},
@@ -125,7 +125,7 @@ public class TwoDArrayClassTask {
         }
 
     }
-
+    //task8
     void calculateSeparateColumn() {
         int[][] nums = {
                 {1, 2, 3, 4},
@@ -144,22 +144,8 @@ public class TwoDArrayClassTask {
 
     }
 
-    void calculateColumnSum() {
-        int[][] nums = {
-                {1, 2, 3},
-                {5, 6, 7},
-                {9, 10, 11}
-        };
-        for (int j = 0; j < nums[0].length; j++) {
-            int columnSum = 0;
-            for (int i = 0; i < nums.length; i++) {
-                columnSum += nums[i][j];
-            }
-            System.out.println("Sum of column " + j + " = " + columnSum);
-        }
-    }
 
-
+    //task9
     void howManyGreatThanUserValue() {
         System.out.println("Enter num");
         int userInput = scanner.nextInt();
@@ -179,7 +165,7 @@ public class TwoDArrayClassTask {
 
         System.out.println("Nums greater than " + userInput + " is " + counter);
     }
-
+    //task10
     void findFirstMatchingElement() {
         System.out.println("Enter num");
         int userInput = scanner.nextInt();
@@ -188,7 +174,6 @@ public class TwoDArrayClassTask {
                 {5, 6, 7},
                 {9, 10, 11}
         };
-
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums[i].length; j++) {
                 if (nums[i][j] == userInput) {
@@ -203,7 +188,7 @@ public class TwoDArrayClassTask {
         System.out.println("Not found");
     }
 
-
+    //task11
     void mainDiagonalSumAndValues() {
         int[][] nums = {
                 {1, 2, 3},
@@ -218,7 +203,7 @@ public class TwoDArrayClassTask {
         System.out.println("Sum of main diagonal: " + sumOfMainDiagonal);
     }
 
-
+    //task12
     void replaceNegative() {
         int[][] nums = {
                 {1, -2, 3},
@@ -238,7 +223,7 @@ public class TwoDArrayClassTask {
         }
     }
 
-
+    //task13
     void studentGrades() {
         int[][] grades = {
                 {100, 52, 73, 88},

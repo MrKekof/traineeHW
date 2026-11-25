@@ -310,11 +310,7 @@ public class TwoDArrayClassTask {
 
         };
         System.out.print("Original: ");
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums[i].length; j++) {
-                System.out.print(nums[i][j] + " ");
-            }
-        }
+        matrixPrint(nums);
 
         int[][] brandNew = new int[3][2];
         System.out.print("Transposed:");
@@ -323,6 +319,28 @@ public class TwoDArrayClassTask {
                 brandNew[i][j] = nums[j][i];
                 System.out.print(brandNew[i][j] + " ");
             }
+        }
+    }
+
+
+    void addTwoMatrices() {
+        int[][] first = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+        int[][] second = {
+                {10, 20, 30},
+                {40, 50, 60}
+        };
+
+        int[][] result = new int[2][3];
+
+        for (int i = 0; i < first.length; i++) {
+            for (int j = 0; j < first[i].length; j++) {
+                result[i][j] = first[i][j] + second[i][j];
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }

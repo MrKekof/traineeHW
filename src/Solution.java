@@ -72,27 +72,28 @@ public class Solution {
     }
 
     public int[] plusOne(int[] digits) {
-        int lastDigit = digits.length - 1;
-        int increment = digits[lastDigit];
-        increment++;
-        if (increment >= 10) {
-            int[] copy = Arrays.copyOf(digits, digits.length + 1);
-            while (increment != 0) {
-                digits[lastDigit-1] = increment % 10;
-                increment /= 10;
-                lastDigit--;
-            }
-            return copy;
-        } else {
-            while (increment != 0) {
-                digits[lastDigit-1] = increment % 10;
-                increment /= 10;
-                lastDigit--;
-            }
+        if (digits[digits.length - 1] < 9) {
+            digits[digits.length - 1] += 1;
             return digits;
+        } else {
+            int [] newDigits = new int[digits.length+1];
+            for (int i = newDigits.length - 1; i <= 0; i--) {
+                newDigits[i] = 0;
+            }
+            newDigits[0] = 1;
+            return newDigits;
         }
-
     }
-
-
+    public int lengthOfLastWord(String s) {
+        int wordCounter=0;
+        for ( int i = s.length() ;i>=0; i-- ){
+            if ( s.charAt(i)!=' '){
+                wordCounter++;
+            }
+            if (s.charAt(i)==' '){
+                break;
+            }
+        }
+        return wordCounter;
+    }
 }

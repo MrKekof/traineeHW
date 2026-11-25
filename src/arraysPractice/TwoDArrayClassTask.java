@@ -19,8 +19,21 @@ public class TwoDArrayClassTask {
         }
     }
 
+    void matrixPrint(int[][] matrix) {
+        System.out.println("Original matrix: ");
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
     void printingAndMod() {
-        int[][] m = {{5, 10, 15}, {20, 25, 30}};
+        int[][] m = {
+                {5, 10, 15},
+                {20, 25, 30}};
         m[0][1] = 99;
         System.out.println(m[1][2]);
     }
@@ -67,6 +80,7 @@ public class TwoDArrayClassTask {
                 {9, 10, 11, 12}
         };
 
+        matrixPrint(matrix);
         int max = matrix[0][0];
         int min = matrix[0][0];
         for (int i = 0; i < matrix.length; i++) {
@@ -92,7 +106,9 @@ public class TwoDArrayClassTask {
                 gonnaFilledByUser[i][j] = scanner.nextInt();
             }
         }
+        matrixPrint(gonnaFilledByUser);
     }
+
 
     void calculateSeparateRow() {
         int[][] nums = {
@@ -116,6 +132,8 @@ public class TwoDArrayClassTask {
                 {5, 6, 7, 8},
                 {9, 10, 11, 12}
         };
+
+
         for (int j = 0; j < nums[0].length; j++) {
             int columnSum = 0;
             for (int i = 0; i < nums.length; i++) {
@@ -207,13 +225,7 @@ public class TwoDArrayClassTask {
                 {5, 6, 7},
                 {9, -110, 11}
         };
-        System.out.println("matrix: ");
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums[i].length; j++) {
-                System.out.print(nums[i][j] + " ");
-            }
-            System.out.println();
-        }
+       matrixPrint(nums);
         System.out.println("New matrix");
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums[i].length; j++) {
@@ -264,46 +276,52 @@ public class TwoDArrayClassTask {
     }
 
 
-    //optional challenges
+//optional challenges
 
-    void largestRowSum(){
+    void largestRowSum() {
         int[][] nums = {
                 {100, 52, 73, 88},
                 {99, 68, 67, 100},
                 {92, 93, 66, 89}
         };
-        int maxRowSum=Integer.MIN_VALUE;
-        int maxRowIndex=0;
-      for ( int i = 0 ; i< nums.length ; i++){
-          int sumRow=0;
+        int maxRowSum = Integer.MIN_VALUE;
+        int maxRowIndex = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int sumRow = 0;
 
-          for (int j=0; j<nums[i].length ; j++ )
-          {
-              sumRow+=nums[i][j];
-          }
-         if ( sumRow>maxRowSum){
-             maxRowSum=sumRow;
-             maxRowIndex=i;
+            for (int j = 0; j < nums[i].length; j++) {
+                sumRow += nums[i][j];
+            }
+            if (sumRow > maxRowSum) {
+                maxRowSum = sumRow;
+                maxRowIndex = i;
 
-         }
-      }
-        System.out.println("Largest row sum is: " +maxRowSum);
-        System.out.println("Largest row index is: " +maxRowIndex);
+            }
+        }
+        System.out.println("Largest row sum is: " + maxRowSum);
+        System.out.println("Largest row index is: " + maxRowIndex);
     }
 
 
-    void transpose(){
+    void transpose() {
         int[][] nums = {
                 {100, 52, 73},
                 {99, 68, 67},
 
         };
+        System.out.print("Original: ");
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                System.out.print(nums[i][j] + " ");
+            }
+        }
 
-        int [][] brandNew = new int [3][2];
-
-        for ( int i=0; i< nums.length ; i++){
-            for (int j =0 ; j<nums[i].length ; j++){
-
+        int[][] brandNew = new int[3][2];
+        System.out.print("Transposed:");
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums[i].length; j++) {
+                brandNew[i][j] = nums[j][i];
+                System.out.print(brandNew[i][j] + " ");
             }
         }
     }
